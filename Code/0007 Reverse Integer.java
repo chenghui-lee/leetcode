@@ -26,3 +26,25 @@ public int reverse(int x) {
         
         return result;
     }
+
+// Old Solution
+ public int reverse(int x) {
+        String temp = Integer.toString(x);
+        String result = "";
+        
+        if (temp.charAt(0) == '-'){
+            result+= "-";
+            for (int i = temp.length()-1;i>=1;i--){
+            result += temp.charAt(i);
+            }
+        } else {
+            for (int i = temp.length()-1;i>=0;i--){
+            result += temp.charAt(i);
+            }
+        }
+        double lift = Double.parseDouble(result);
+        if (lift >Integer.MAX_VALUE || lift <Integer.MIN_VALUE)
+            return 0;
+        x = Integer.parseInt(result);
+        return x;
+    }
