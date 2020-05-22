@@ -27,7 +27,7 @@ string frequencySort(string s) {
         for(char c : s)
             count[c] += 1;
         vector<pair<int,char>> arr;
-        for(int c = 0; c < 256; ++c)
+        for(int c = 0; c < 256; ++c) // 256 bcs ascii got 256 characters
         {
             if(count[c]) arr.push_back({count[c],c});
         }
