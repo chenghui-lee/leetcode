@@ -7,3 +7,6 @@ public:
         return abs(check-mask)<=(1e-9);
     }
 };
+// another solution
+if (n<=0) return false;
+return (n & (n-1))==0;
