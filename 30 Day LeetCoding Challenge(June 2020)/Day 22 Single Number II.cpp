@@ -11,3 +11,15 @@ public:
         return ones;
     }
 };
+
+// another idea
+
+int singleNumber(vector<int>& nums) {
+    // ones - storing element that appear once, twos - appear twice
+        int ones =0, twos = 0;
+        for(int i=0; i<nums.size(); i++){
+            ones = (ones^nums[i]) & ~(twos);
+    	    twos = (twos^nums[i]) & ~(ones);
+        }
+        return ones;
+    }
