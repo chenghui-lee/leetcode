@@ -1,4 +1,5 @@
 // https://en.wikipedia.org/wiki/Reservoir_sampling
+https://www.youtube.com/watch?v=A1iwzSew5QY
 class Solution {
 private:
     ListNode* head;
