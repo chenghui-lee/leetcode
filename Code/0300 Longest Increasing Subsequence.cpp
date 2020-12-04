@@ -20,3 +20,29 @@ public:
         return res;
     }
 };
+
+
+// Method 2, Patience Sorting
+// O(NlogN)
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> dp(n);
+        int size = 0;
+        
+        for(int& x : nums){
+            int i = 0, j = size;
+            while(i < j){
+                int mid = (i+j)/2;
+                if (dp[mid] < x) i = mid + 1;
+                else j = mid;
+            }
+            dp[i] = x;
+            if (i == size)size++;
+        }
+        return size;
+        
+        
+    }
+};
