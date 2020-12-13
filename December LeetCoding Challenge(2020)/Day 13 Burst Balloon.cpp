@@ -4,8 +4,8 @@ class Solution {
 public:
     int maxCoins(vector<int>& nums) {
         int n = nums.size();
-        nums.insert(nums.begin(), 1);
-        nums.push_back(1);
+        nums.insert(nums.begin(), 1); // insert extra balloon before the first balloon
+        nums.push_back(1); // extra balloon after the last balloon
         
         vector<vector<int>> dp(n+2, vector<int>(n+2, 0)); // dp[i][j] = maxCoin in (nums[i] ~ nums[j])
         
