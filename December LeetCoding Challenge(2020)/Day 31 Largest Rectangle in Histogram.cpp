@@ -12,7 +12,7 @@ public:
         for(int i=1; i<n; i++){
             int idx = i-1;
             while(idx >=0 && heights[idx] >= heights[i]){
-                idx = left[idx];
+                idx = left[idx]; // optimization here, normally is idx++
             }
             left[i] = idx;
         }
@@ -21,7 +21,7 @@ public:
             int idx = i + 1;
 
             while (idx < n && heights[idx] >= heights[i]) {
-                idx = right[idx];
+                idx = right[idx];// optimization here, normally is idx++
             }
             right[i] = idx;
         }
