@@ -18,6 +18,7 @@ public:
                 if(cur->left) temp.push_back({cur->left, x-1});
                 if(cur->right) temp.push_back({cur->right, x+1});
             }
+            // sort(temp.begin(), temp.end(), [](pair<TreeNode*, int> a, pair<TreeNode*, int> b){return a.first->val < b.first->val;}); // with lambda expression
             sort(temp.begin(), temp.end(), cmp);
             for(auto t:temp) q.push(t);
         }     
