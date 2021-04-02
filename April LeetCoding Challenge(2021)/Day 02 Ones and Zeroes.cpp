@@ -3,7 +3,7 @@ public:
     
     int findMaxForm(vector<string>& strs, int m, int n) {
         int res = 0;
-        vector<vector<int>> dp(m+1, vector<int>(n+1));
+        vector<vector<int>> dp(m+1, vector<int>(n+1)); // max num of string formed with i's 0 j's 1, kinda like knapsack
         
         for(auto s : strs){
             int one = 0, zero = 0;
