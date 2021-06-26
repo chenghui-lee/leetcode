@@ -1,4 +1,4 @@
-// Binary index tree
+// Binary indexed tree
 // FenwickTree
 class FenwickTree {    
 public:
