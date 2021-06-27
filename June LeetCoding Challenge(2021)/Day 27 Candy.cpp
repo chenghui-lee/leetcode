@@ -1,3 +1,4 @@
+// greedy, n logn
 class Solution {
 public:
     typedef pair<int,int> pi;
