@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/unique-binary-search-trees/discuss/31666/DP-Solution-in-6-lines-with-explanation.-F(i-n)-G(i-1)-*-G(n-i)
 [1,2,3,4,5,6,7]
 when we let 3 as root, at left we have [1,2] and right [4,5,6,7]
 so dp[3] = dp[2] * dp[4]
