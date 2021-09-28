@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/grid-game/discuss/1486340/C%2B%2BJavaPython-Robot1-Minimize-TopSum-and-BottomSum-of-Robot-2-Picture-Explained
+// dp cant work, because it cannot guarantee the robot 2 is min
 class Solution {
 public:
     long long gridGame(vector<vector<int>>& grid) {
