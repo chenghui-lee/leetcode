@@ -1,6 +1,7 @@
 // 232ms, 70.99%
 // 66.2MB, 18.7%
 /*
+https://leetcode.com/problems/longest-subsequence-repeated-k-times/discuss/1471911/Java-BFS-O(n-*-2-8)-with-detailed-explanation
 basically use bfs to generate all possible subsequence, start from the shortest to longest one
 in bfs, will filter out those invalid one
 */
