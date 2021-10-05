@@ -52,3 +52,13 @@ public:
         return dp[5];
     }
 };
+
+// O(1) time and space
+// we need to put 4 delimiters (because we have 5 vowels)in n+4 spaces
+// so it is n+4 C 4
+// a | e | i | o | u
+// xxx|xxx|xx|x|x -> n+4 C 4
+
+class Solution:
+    def countVowelStrings(self, n: int) -> int:
+        return comb(n+4, 4)
