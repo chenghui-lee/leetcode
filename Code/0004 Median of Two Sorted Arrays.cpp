@@ -1,3 +1,18 @@
+/*
+Idea:
+Split the two arrays into 2 parts, left side and right side
+
+Array 1: x x x | x x x x
+Array 2: y y | y y y y
+
+Such that all the elements on the left is less than equals to right side
+maxLeftX <= minRightY and maxLeftY <= minLeftX
+
+Then the median can be calculated by
+even total length : max(maxLeftX, maxLeftY) + min(minRightX, minRightY) / 2;
+odd total length : max(maxLeftX, maxLeftY)
+
+*/
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
