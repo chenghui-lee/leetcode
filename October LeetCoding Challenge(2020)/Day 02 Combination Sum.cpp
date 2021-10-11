@@ -15,7 +15,7 @@ public:
         for(int i=start; i<candidates.size(); i++){
             if (candidates[i] > target) break;
             temp.push_back(candidates[i]);
-            dfs(candidates, target - candidates[i], i, res, temp);
+            dfs(candidates, target - candidates[i], i, res, temp); // not i + 1 because can use back same element
             temp.pop_back();
         }
     }
