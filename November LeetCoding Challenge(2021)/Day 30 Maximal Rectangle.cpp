@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=g8bSdXCG-lA
+// https://leetcode.com/problems/maximal-rectangle/discuss/29054/Share-my-DP-solution
 class Solution {
 public:
     int maximalRectangle(vector<vector<char>>& matrix) {
