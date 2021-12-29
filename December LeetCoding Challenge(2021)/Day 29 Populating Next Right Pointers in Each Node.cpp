@@ -46,3 +46,18 @@ public:
         return root;
     }
 };
+
+// another solution, using recursion
+class Solution {
+public:
+    void dfs(Node* cur, Node* next){
+        if (!cur) return;
+        cur->next = next;
+        dfs(cur->left, cur->right);
+        dfs(cur->right, cur->next ? cur->next->left : NULL);
+    }
+    Node* connect(Node* root) {
+        dfs(root, NULL);
+        return root;
+    }
+};
