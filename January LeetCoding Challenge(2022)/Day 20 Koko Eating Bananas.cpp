@@ -2,7 +2,7 @@ class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
         int l = 1, r = 1e9;
-        
+        // the bounds are actually [1, max(piles)]
         while(l < r){
             int mid = (l+r)/2;
             int total = 0;
