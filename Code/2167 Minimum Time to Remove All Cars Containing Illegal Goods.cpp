@@ -1,3 +1,12 @@
+        // For each i, we have 3 options: 1. remove all chars from left
+        // 2. remove all chars from right and 3. remove this char and the rest 
+        // of i-1 or i+1. 
+        // So lets do 2 loops, one for L2R pass and one for R2L pass
+        // for case 3. L2R pass dp1[i] indicates min operations needed if we only remove
+        // cars from the left, and R2L pass dp2[i] indicates min operations needed if we 
+        // only remove cars from the right uptil and including i. Then adding dp1[i] + dp2[i+1]
+        // should give us the answer:
+        
 class Solution {
 public:
     int minimumTime(string s) {
