@@ -39,7 +39,7 @@ public:
         unordered_set<string> beginSet, endSet;
         if (s.find(endWord) == s.end()) return 0;
         
-        int res = 1;
+        int res = 1; // hit->hat->hot, 3
         beginSet.insert(beginWord);
         endSet.insert(endWord);
         
