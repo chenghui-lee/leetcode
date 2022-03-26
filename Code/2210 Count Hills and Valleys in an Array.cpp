@@ -19,3 +19,23 @@ public:
         return res;
     }
 };
+
+// O(n) time, O(1) space
+class Solution {
+public:
+    int countHillValley(vector<int>& nums) {
+        int n = nums.size();
+        
+        int i=1, res = 0;
+        
+        while(i < n && nums[i] == nums[i-1]) i++;
+        int prevIdx = i - 1;
+        
+        for(; i<n-1; i++){
+            if (nums[i] == nums[i+1]) continue;
+            res += (nums[i] > nums[prevIdx]) == (nums[i] > nums[i+1]);
+            prevIdx = i;
+        }
+        return res;
+    }
+};
