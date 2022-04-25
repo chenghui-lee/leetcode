@@ -25,22 +25,22 @@ public:
 	    // **DO NOT** save a copy of nums and manipulate it directly.
 	    // You should only use the Iterator interface methods.
 	    
-        for(int i=nums.size()-1; i>=0; i--){
-            s.push(nums[i]);
-        }
+	    for(int i=nums.size()-1; i>=0; i--){
+	        s.push(nums[i]);
+	    }
 	}
 	
     // Returns the next element in the iteration without advancing the iterator.
 	int peek() {
-        return s.top();
+            return s.top();
 	}
 	
 	// hasNext() and next() should behave the same as in the Iterator interface.
 	// Override them if needed.
 	int next() {
 	    int temp = s.top();
-        s.pop();
-        return temp;
+            s.pop();
+            return temp;
 	}
 	
 	bool hasNext() const {
