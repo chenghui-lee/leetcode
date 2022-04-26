@@ -1,3 +1,4 @@
+// edit: seems like pair is faster than array of size 3, see third sol
 // official sol
 class UnionFind {
 public:
@@ -132,5 +133,63 @@ public:
             
         return cost;
         
+    }
+};
+
+// my accepted sol, use pair
+struct UnionFind{
+    vector<int> parent;
+    
+    UnionFind(int N){
+        parent = vector<int>(N, -1);
+    }
+    int root(int x){
+        if (parent[x] < 0) return x;
+        return parent[x] = root(parent[x]);
+    }
+    bool unite(int x, int y){
+        int parentA = root(x), parentB = root(y);
+        if (parentA == parentB) return false;
+        
+        if (parent[parentA] > parent[parentB]) swap(parentA, parentB);
+        parent[parentA] += parent[parentB];
+        parent[parentB] = parentA;
+        return true;
+    }
+};
+
+
+class Solution {
+public:
+    int minCostConnectPoints(vector<vector<int>>& points) {
+        int n = points.size();
+        vector<pair<int, pair<int, int>>> allEdges;
+        
+        // Storing all edges of our complete graph.
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                int w = abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1]);
+                allEdges.push_back({w, {i, j}});
+            }
+        }
+        
+        sort(allEdges.begin(), allEdges.end());
+        
+        UnionFind uf(n);
+        int cost = 0;
+        int edgesUsed = 0;
+        
+        for (int i = 0; i < allEdges.size() && edgesUsed < n - 1; i++) {
+            int u = allEdges[i].second.first;
+            int v = allEdges[i].second.second;
+            int w = allEdges[i].first;
+            
+            if (uf.unite(u, v)) {
+                cost += w;
+                edgesUsed++;
+            }
+        }
+        
+        return cost;
     }
 };
