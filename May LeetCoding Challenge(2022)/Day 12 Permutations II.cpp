@@ -13,7 +13,7 @@ private:
         } else {
             for (int j = i; j < nums.size(); j++) {
                 if (j == i || nums[j] != nums[i]) {
-                    swap(nums[i], nums[j]);
+                    swap(nums[i], nums[j]); // no double swap because we pass the array by value
                     permute(nums, i + 1, perms);
                 }
             }
