@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int subarraySum(vector<int>& arr, int target){
+        unordered_map<int, int> m; // running_sum, count
+        int sum = 0, res  = 0;
+        
+        for(auto x : arr){
+            sum += x;
+            if (sum == target) res++;
+            if (m[sum - target]) res += m[sum-target];
+            m[sum]++;
+        }
+        
+        return res;
+    }
+    int numSubmatrixSumTarget(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size(), n = matrix[0].size();
+        vector<int> arr(m);
+        int res = 0 ;
+        
+        for(int i=0; i<n; i++){ // starting col
+            fill(arr.begin(), arr.end(), 0);
+            for(int j=i; j<n; j++){ // end col
+                for(int row=0; row<m; row++){ // for every row
+                    arr[row] += matrix[row][j];
+                }
+                res += subarraySum(arr, target);
+            }
+        }
+        return res;
+    }
+};
