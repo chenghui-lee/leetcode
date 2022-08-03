@@ -5,11 +5,13 @@ public:
         
     }
     
-    /*
+     /*
     |----|  |----| <- next
         |-----|
     
-    
+    binary search the position of the current interval in the available booking, 
+    then see if the previous and next booking are intersecting with this
+    current interval or not
     */
     bool book(int start, int end) {
         auto next = s.lower_bound({start, end});
