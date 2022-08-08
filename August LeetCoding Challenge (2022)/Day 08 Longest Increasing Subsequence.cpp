@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int lengthOfLIS(vector<int>& nums) {
+    int lengthOfLIS(vector<int>& nums) { // this algo is called patience sort
         vector<int> dp;
         // for every x in num, insert it if larger than all element. else replace the lower bound of that num
         for(int x : nums){
