@@ -27,4 +27,4 @@ public:
         }
         return res;
     }
-};Minimum Time to Make Rope Colorful
+};
